@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "e2e": "node test/e2e/runner.js"
+  },
+  "devDependencies": {
+    "chromedriver": "^2.41.0",
+    "cross-spawn": "^6.0.5",
+    "http-server": "^0.11.1",
+    "nightwatch": "^0.9.21",
+    "selenium-server": "^3.14.0"
+  }
+}
