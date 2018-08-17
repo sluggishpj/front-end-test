@@ -18,8 +18,12 @@ before_install:
   - nvm install 6.9.5
 install:
   - npm install
+  - npm install coveralls
 script:
   - npm run e2e
   - npm run unit
+cache:
+  directories:
+  - node_modules
 after_script:
   - npm run coverage

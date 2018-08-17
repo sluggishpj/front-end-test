@@ -1,7 +1,8 @@
 {
   "scripts": {
     "e2e": "node test/e2e/runner.js",
-    "unit": "node ./node_modules/karma/bin/karma start ./test/unit/karma.conf.js"
+    "unit": "node ./node_modules/karma/bin/karma start ./test/unit/karma.conf.js",
+    "coverage": "cat .test/unit/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "devDependencies": {
     "browserify": "^16.2.2",

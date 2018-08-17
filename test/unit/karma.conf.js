@@ -5,14 +5,14 @@
 module.exports = function(config) {
     config.set({
         // base path that will be used to resolve all patterns (eg. files, exclude)
-        basePath: '..',
+        basePath: '.',
 
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
         frameworks: ['mocha', 'browserify'],
 
         // list of files / patterns to load in the browser
-        files: ['test/unit/sqrt.test.js'],
+        files: ['sqrt.test.js'],
 
         // list of files / patterns to exclude
         exclude: ['node_modules'],
@@ -20,7 +20,7 @@ module.exports = function(config) {
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            'test/unit/sqrt.test.js': ['browserify']
+            'sqrt.test.js': ['browserify']
         },
 
         // test results reporter to use
