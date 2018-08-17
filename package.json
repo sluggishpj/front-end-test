@@ -5,6 +5,7 @@
   },
   "devDependencies": {
     "chromedriver": "^2.41.0",
+    "coveralls": "^3.0.2",
     "cross-spawn": "^6.0.5",
     "http-server": "^0.11.1",
     "istanbul": "^0.4.5",
