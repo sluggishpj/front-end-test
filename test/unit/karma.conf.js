@@ -2,6 +2,8 @@
 // Generated on Thu Aug 16 2018 23:15:22 GMT+0800 (中国标准时间)
 // 参考：https://github.com/Selvin11/city-data/blob/master/test/karma.conf.js
 
+let webpackConfig = require('../../config/webpack.config')
+
 module.exports = function(config) {
     config.set({
         // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -9,9 +11,10 @@ module.exports = function(config) {
 
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-        frameworks: ['mocha', 'browserify'],
+        frameworks: ['mocha'],
 
         // list of files / patterns to load in the browser
+        // 入口文件
         files: ['sqrt.test.js'],
 
         // list of files / patterns to exclude
@@ -20,13 +23,13 @@ module.exports = function(config) {
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            'sqrt.test.js': ['browserify', 'coverage']
+            'sqrt.test.js': ['webpack', 'sourcemap']
         },
 
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress', 'coverage'],
+        reporters: ['coverage-istanbul'],
 
         // web server port
         port: 9876,
@@ -53,25 +56,22 @@ module.exports = function(config) {
         // how many browser should be started simultaneous
         concurrency: Infinity,
 
-        plugins: ['karma-mocha', 'karma-coverage', 'karma-chrome-launcher', 'karma-browserify'],
+        plugins: ['karma-webpack', 'karma-sourcemap-loader', 'karma-mocha', 'karma-chrome-launcher', 'karma-coverage-istanbul-reporter'],
 
-        // karma-coverage 插件
-        coverageReporter: {
-            dir: 'coverage',
-            reporters: [
-                {
-                    type: 'json',
-                    subdir: '.',
-                    file: 'coverage.json'
-                },
-                {
-                    type: 'lcov',
-                    subdir: '.'
-                },
-                {
-                    type: 'text-summary'
-                }
-            ]
+
+        webpack: webpackConfig,
+        webpackMiddleware: {
+            noInfo: true
+        },
+
+        // karma-coverage-istanbul-reporter插件
+        coverageIstanbulReporter: {
+            reports: ['lcov', 'text-summary'],
+            dir: 'coverage/',
+            fixWebpackSourcePaths: true,
+            skipFilesWithNoCoverage: true,
+            'report-config': {}
         }
+
     })
 }

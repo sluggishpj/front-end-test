@@ -5,4 +5,4 @@ var My = {
     }
 }
 
-module.exports = My
+export default My
