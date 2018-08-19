@@ -2,3 +2,5 @@
 node_modules/
 npm-debug.log
 coverage/
+test/e2e/reports
+test/e2e/screenshots
