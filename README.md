@@ -94,10 +94,13 @@ npm i -D webpack babel-core babel-loader babel-plugin-istanbul babel-preset-env 
 > * https://github.com/dwyl/learn-nightwatch
 > * https://github.com/cythilya/nightwatch101
 > * https://www.zhihu.com/question/51764943
+>
 > unit
+>
 > * https://github.com/tmallfe/tmallfe.github.io/issues/37
 > * https://juejin.im/post/59807358518825563e037e3c
 > * https://www.jianshu.com/p/9ab441d6a1f4
+>
 > travis-ci
+>
 > * http://sm4.github.io/2017/02/07/Vue-Nightwatch-e2e-tests-on-Travis-CI-in-Chrome/
-> * 
