@@ -12,7 +12,7 @@ module.exports = {
             })
 
             // 判断是否含类名
-            .assert.cssClassPresent("#i_am_an_id", "i_am_a_class")
+            .assert.cssClassPresent('#i_am_an_id', 'i_am_a_class')
 
             // 设置value
             .setValue('#fbemail', '123@qq.com')
@@ -21,7 +21,7 @@ module.exports = {
             .saveScreenshot(config.imgpath(browser, 'email.png'))
 
             // 取得元素
-            .getValue("#fbemail", function (result) {
+            .getValue('#fbemail', function (result) {
                 this.assert.equal(result.value, '123@qq.com')
             })
 

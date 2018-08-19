@@ -30,7 +30,7 @@ module.exports = {
                 'path': SCREENSHOT_PATH // save screenshots here
             },
             'globals': {
-                'waitForConditionTimeout': 10000
+                'waitForConditionTimeout': 5000 // // sometimes internet is slow so wait
             }
         },
         'chrome': {
@@ -48,24 +48,19 @@ module.exports = {
                 'acceptSslCerts': true,
                 'marionette': true
             }
-        },
-
-        // 'phantomjs': {
-        //     'desiredCapabilities': {
-        //         'browserName': 'phantomjs',
-        //         'javascriptEnabled': true,
-        //         'acceptSslCerts': true
-        //     }
-        // }
+        }
     }
 }
 
-function padLeft(count) { // theregister.co.uk/2016/03/23/npm_left_pad_chaos/
+
+// theregister.co.uk/2016/03/23/npm_left_pad_chaos/
+function padLeft(count) { 
     return count < 10 ? '0' + count : count.toString()
 }
 
 var FILECOUNT = 0 // "global" screenshot file count
 /**
+ * 配置截图路径和名称
  * The default is to save screenshots to the root of your project even though
  * there is a screenshots path in the config object above! ... so we need a
  * function that returns the correct path for storing our screenshots.

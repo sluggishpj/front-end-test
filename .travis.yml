@@ -10,7 +10,10 @@ addons:
 jdk:
   - oraclejdk8
 node_js:
-  - 6
+  - "stable"
+  - "6.0.0"
+  - "7.0.0"
+  - "8.0.0"
 before_install:
   - export CHROME_BIN=chromium-browser
   - export DISPLAY=:99.0
@@ -19,10 +22,8 @@ before_install:
 install:
   - npm install
 script:
-  - npm run e2e
-  - npm run unit
+  - npm test
 cache:
   directories:
   - node_modules
-after_script:
-  - npm run coverage
+after_script: "npm install coveralls && cat ./coverage/lcov.info | coveralls"
